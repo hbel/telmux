@@ -8,20 +8,21 @@
   "typings": "lib/src/Handler",
   "license": "MIT",
   "devDependencies": {
-    "jasmine": "^3.1.0",
-    "@types/jasmine": "^2.8.8",
     "typescript": "^2.9.2"
   },
   "dependencies": {
+    "@types/jest": "^23.1.6",
     "@types/kefir": "^3.7.0",
     "@types/ramda": "^0.25.34",
+    "jest": "^23.4.1",
     "kefir": "^3.8.3",
-    "ramda": "^0.25.0"
+    "ramda": "^0.25.0",
+    "ts-jest": "^23.0.0"
   },
   "scripts": {
     "build": "tsc",
-    "start": "tsc; jasmine",
-    "test": "jasmine"
+    "start": "tsc; jest",
+    "test": "jest"
   },
   "files": [
     "lib/src"
