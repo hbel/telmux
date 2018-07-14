@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/hbel/telmux.svg?branch=master)](https://travis-ci.org/hbel/telmux)
 
+[![NPM](https://nodei.co/npm/telmux.png)](https://npmjs.org/package/telmux)
+
 Highly opiniated state management for TypeScript apps.
 
 ## Introduction
