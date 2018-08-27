@@ -1,11 +1,11 @@
 {
   "name": "telmux",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Highly opnionated state management",
-  "main": "index.js",
+  "main": "lib/src/Handler.js",
+  "types": "lib/src/Handler.d.ts",
   "repository": "git@github.com:hbel/telmux.git",
   "author": "Hendrik Belitz",
-  "typings": "lib/src/Handler",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^2.9.2"
