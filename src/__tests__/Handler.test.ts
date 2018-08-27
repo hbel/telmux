@@ -68,4 +68,14 @@ describe("A handler", () => {
         handler.send("+");
         handler.modelStream.onValue( v => {expect(v.value).toBe(4); done();});
     });
+    it("given no debounce value, a stream with debounce of 25ms should be created", () => {
+        const handler = new Handler<Command,DummyModel>(new DummyModel(1), dummyUpdate);
+        expect((handler.modelStream as any)._name).toBe("stream.debounce");
+        expect((handler.modelStream as any)._wait).toBe(25);
+    });
+    it("using a debounce value of 0 should lead to a stream without debounce", () => {
+        const handler = new Handler<Command,DummyModel>(new DummyModel(1), dummyUpdate, 0);
+        expect((handler.modelStream as any)._name).not.toBe("stream.debounce");
+        expect((handler.modelStream as any)._wait).toBeFalsy();
+    });
 });

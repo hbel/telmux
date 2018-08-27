@@ -26,9 +26,8 @@ class Handler<Command,Model> {
         this.model = initialModel;
 
         const commandStream = stream<Command,never>((e: Emitter<Command,never>) => { this.emitter = e; }).delay(1);
-        this.modelStream = stream<Model,never>((e: Emitter<Model,never>) => {this.modelEmitter = e;});
-        if (debounce > 0)
-            this.modelStream = this.modelStream.debounce(debounce);
+        const models = stream<Model,never>((e: Emitter<Model,never>) => {this.modelEmitter = e;});
+        this.modelStream = debounce > 0 ? models.debounce(debounce) : models;
 
         this.modelStream.onValue((model: Model) => forEach(observer => observer(model), this.observers));
 
